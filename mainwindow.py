@@ -16,6 +16,16 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
 
+    def btnPress2_Clicked(self):
+ #      print("Amba")
+        self.ui.textEdit.setPlainText("Hello PyQt5!\nfrom pythonpyqt.com")
+        print(dir(MainWindow))
+
+    def btnPress1_Clicked(self):
+        print("Caramba")
+
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     widget = MainWindow()

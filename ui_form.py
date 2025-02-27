@@ -25,12 +25,15 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 600)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.pushButton1 = QPushButton(self.centralwidget)
+        self.pushButton1.setObjectName(u"pushButton1")
+        self.pushButton1.setGeometry(QRect(100, 10, 100, 32))
+        self.pushButton2 = QPushButton(self.centralwidget)
+        self.pushButton2.setObjectName(u"pushButton2")
+        self.pushButton2.setGeometry(QRect(390, 20, 100, 32))
         self.textEdit = QTextEdit(self.centralwidget)
         self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(210, 60, 104, 31))
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(60, 0, 100, 32))
+        self.textEdit.setGeometry(QRect(100, 160, 101, 31))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -41,21 +44,15 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.pushButton.clicked.connect(self.textEdit.clear)
+        self.pushButton1.clicked.connect(MainWindow.btnPress1_Clicked)
+        self.pushButton2.clicked.connect(MainWindow.btnPress2_Clicked)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">;;k;k;</p></body></html>", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton1.setText(QCoreApplication.translate("MainWindow", u"PushButton1", None))
+        self.pushButton2.setText(QCoreApplication.translate("MainWindow", u"PushButton2", None))
     # retranslateUi
 
